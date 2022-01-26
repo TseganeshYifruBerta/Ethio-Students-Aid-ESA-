@@ -15,8 +15,8 @@ public class RegistrationForm {
         User user = new User();
         user.setUsername(this.username);
         user.setPassword(encoder.encode(this.password));
-        user.setFullName(this.fullName);
-        user.setPhone(this.phone);
+        user.setFirstName(this.firstName);
+        user.setLastName(this.lastName);
         return user;
     }
 }
