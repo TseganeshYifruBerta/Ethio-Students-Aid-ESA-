@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link th:href="@{/css/style.css}" rel="stylesheet" />
+        <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"></html>
+        <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Welcome</title>
+        <script
+        th:src="@{/js/fa.js}"
+        data-auto-a11y="true"
+      ></script>
+      <link rel="stylesheet" th:href="@{/js/fa.css}">
+    </head>
+<body>
+
+        <div class="container wweww">
+            <nav class="navbar navbar-expand-lg navbar-light navigation" >
+                <img src="/images/ESA.png"   alt="Logo" width="20%" height="20%"  class="d-inline-block align-top navbar-brand" /><span class="hidden">EthioStudents Aid</span></a> 
+               
+            <button
+                class="navbar navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#toggleMobileMenu"
+                aria-controls="toggleMobileMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                >
+            <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="toggleMobileMenu">
+                <ul class="navbar-nav ms-auto text-center">
+                    <li>
+                        <a class="nav-link" th:href="@{/opportunities}">Opportunities</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" th:href="@{/providehelp}">Provide Help</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" th:href="@{/addForm}">Ask for help</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" th:href="@{/donation}">Support us</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" th:href="@{/Frontpage}">Home</a>
+                    </li>
+                </ul>
+            </div>
+            </nav>
+        </div>
+        <div class="container pt-50">
+        <h2>List of Question and Answers</h2>
+        <hr>
+        <a th:href="@{/addForm}" class="btn btn-primary mb-20">Add Question</a>
+        <hr>
+        
+            
+            <table class="table table-bordered table-striped" id="question-table">
+                <thead>
+                    <tr>
+                        <th>userName</th>
+                        <th>qsn type</th>
+                        <th>question</th>
+                        <th>answer</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="AskQ: ${AskQ}">
+                        <td th:text = "${AskQ.username}"></td>
+                        <td th:text = "${AskQ.type}"></td>
+                        <td th:text = "${AskQ.question}"></td>
+                        <td th:text="${AskQ.answer}"></td>
+                        <td> 
+                            <a th:href = @{/showUpdateForm(userId=${AskQ.id})} class="btn btn-info">Update</a>
+                            <a th:href = @{/deletequestion(userId=${AskQ.id})} class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr>
+
+        
+        <div th:each="AskQ: ${AskQ} ">
+            <div class="card border-secondary mb-3" style="max-width: 30rem;"></div>
+             <!-- <td th:text = "${AskQ.username}"></td> -->
+             <span>User Name:-</span>
+            <span th:text = "${AskQ.username}"></span><br>
+            <span>Question Type:-</span>
+            <span th:text = "${AskQ.type}"></span><br>
+            <span>Question:-</span>
+            
+            <span th:text = "${AskQ.question}"></span><br>
+            <div class="card border-info mb-3 card-body text-info card-header" style="width: 18rem;">
+            <span class="card-title">  Answers:-</span><br>
+            <span class="card-text" th:text = "${AskQ.answer}"></span><br>
+        </div>
+            <a type="hidden" th:href = @{/showUpdateForm(userId=${AskQ.id})} class="btn btn-info">Provide Answer</a>
+            <a th:href = @{/deletequestion(userId=${AskQ.id})} class="btn btn-danger">Delete</a>
+        </div>
+            <!-- <form th:action=> -->
+                <!-- <span th:text = ></span><br> -->
+
+                <!-- <input type="text" > -->
+                
+                <!-- <input type="text" th:text="${answer}"> -->
+
+
+                <!-- <a th:href="@{/provideanswer}" class="btn btn-primary mb-20">provide Answers</a> -->
+                <!-- <button class="btn-primary rounded ml-5" type="submit">submit</button> -->
+                <!-- <a type="hidden" th:href="${AskQ.answer(userId=${AskQ.id})}" class="btn btn-info">Provide Answer</a> -->
+                <!-- <input type="hidden" th:field="*{id}">
+
+
+            </form> -->
+            
+            <!-- <span>Answer:-</span><br>
+            <span th:text="${AskQ.answer}"></span> -->
+            <!-- <div th:each="${Answers.answer}">
+                <span th:text="${Answers.answers}"></span>
+
+                <form th:action="@{/view}">
+                    <input type="text" th:field="*{answers}">
+                    <button type="submit" class="btn btn-primary mt-2" >
+                        <a th:href="@{/}" method="POST" style="color: black;">submit</a>
+                       </button>
+                </form>
+            </div> -->
+           
+             <hr>
+        </div>
+    <footer class="page-footer bg-dark mt-5">
+        <div class="bg-success">
+            <div class="container">
+                <div class="row py-4 d-flex align-items-center">
+                    <div class="col-md-12 text-center">
+                        <a href="#"><i class="fab fa-facebook-f text-white mr-4" ></i></a>
+                        <a href="#"><i class="fab fa-twitter text-white mr-4" ></i></a>
+                        <a href="#"><i class="fab fa-linkedin text-white mr-4" ></i></a>
+                        <a href="#"><i class="fab fa-github" ></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="container text-center text-md-left mt-5">
+    <div class="row">
+    <div class="col-md-3 mx-auto mb-4">
+        <h6 class="text-white text-uppercase font-weight-bold">About Us</h6>
+        <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 125px;" height="2px">
+    <p class="mt-2 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est deserunt eligendi recusandae deleniti. Soluta temporibus aspernatur neque dolore. Expedita architecto non molestias dolores ut cupiditate quisquam dolore nisi voluptate quae.</p>
+    </div>
+    <div class="col-md-2 mx-auto mb-4">
+        <h6 class="text-white text-uppercase font-weight-bold ">Contacts</h6>
+        <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 85px;" height="2px">
+        
+    <ul class="list-unstyled text-white">
+        <li class="my-2"><i class="fa fa-home mr-3"></i>AddisAbaba, Ethiopia</li>
+        <li class="my-2"><i class="fa fa-envelope mr-3"></i>ESA@gamil.com</li>
+        <li class="my-2"><i class="fa fa-phone mr-3"></i>+251973004627</li>
+        <li class="my-2"><i class="fa fa-print mr-3"></i>+0114331452</li>
+    </ul>
+    
+    
+    </div>
+    </div>
+
+
+
+    </div>
+    </footer>
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>   
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"></html>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <script
+    th:src="@{/js/fa.js}"
+    data-auto-a11y="true"
+  ></script>
+  <link rel="stylesheet" th:href="@{/js/fa.css}">
+</head>
+<body>
+    <div class="container wweww">
+        <nav class="navbar navbar-expand-lg navbar-light navigation" >
+            <img src="/images/ESA.png"   alt="Logo" width="20%" height="20%"  class="d-inline-block align-top navbar-brand" /><span class="hidden">EthioStudents Aid</span></a> 
+           
+        <button
+            class="navbar navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#toggleMobileMenu"
+            aria-controls="toggleMobileMenu"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            >
+        <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="toggleMobileMenu">
+            <ul class="navbar-nav ms-auto text-center">
+                <li>
+                    <a class="nav-link" th:href="@{/opportunities}">Opportunities</a>
+                </li>
+                <li>
+                    <a class="nav-link" th:href="@{/providehelp}">Provide Help</a>
+                </li>
+                <li>
+                    <a class="nav-link" th:href="@{/addForm}">Ask for help</a>
+                </li>
+                <li>
+                    <a class="nav-link" th:href="@{/donation}">Support us</a>
+                </li>
+                <li>
+                    <a class="nav-link" th:href="@{/Front}">Home</a>
+                </li>
+            </ul>
+        </div>
+        </nav>
+    </div>
+
+<section class="section bg-light">
+    <div class="container" style="color: rgb(124, 156, 145);">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h1 class="heading mb-4">Here Are Some Advises</h1>
+                <p class="mb-4 lead">Below Lies Three Of The Things We Strongly Advise Students Of This Time Should Get Involved With.
+                    Our Belief Is That These Three Aspects, Tend To Improve The Human Mind Get The Better Of Themselves
+                </p>
+            
+            </div>
+        </div>
+    
+            </div>
+        </div>
+    </div>
+        
+    </div>
+</section>
+
+<!-- <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+<div class="carousel-inner">
+
+<div class="item Active">
+    <div class="container">
+        <h1>headline</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, quo cum fugiat blanditiis sapiente, laborum, illo delectus distinctio obcaecati velit aspernatur corporis accusamus? Voluptates, ea! Temporibus quasi nulla sit nobis.]</p>
+    <a href="#" class="btn btn-lg btn-primary">whats up</a>
+    </div>
+
+</div>
+
+<div class="item">
+    <div class="container">
+        <h1>headline</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, quo cum fugiat blanditiis sapiente, laborum, illo delectus distinctio obcaecati velit aspernatur corporis accusamus? Voluptates, ea! Temporibus quasi nulla sit nobis.]</p>
+    <a href="#" class="btn btn-lg btn-primary">whats up</a>
+    </div>
+
+</div>
+
+</div>
+</div> -->
+
+
+
+<div id="carousell" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carousell" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carousell" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carousell" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/images/programming.jpg" class="d-block w-100" alt="coding">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Programming</h5>
+          <p class="animated fadeInleft" style="animation-delay:3s;">Programming is arguably one of the most important skills for current as well as future generations to learn. For young learners, programming helps to gain problem-solving skills.</p>
+
+               </div>
+      </div>
+      <div class="carousel-item">
+         <img src="/images/justask.png " class="d-block w-100" alt="What's__up">
+        <div class="carousel-caption d-none d-md-block">
+          <div class="ugh">
+              <h5>Ask Questions</h5>
+          <p>Ironic coming from a Q&A website, but Asking questions is always progressing a step forward to ineviatable Success.</p>
+        </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/images/Hellblade.jpeg" class="d-block w-100" alt="Video games">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Video Games</h5>
+          <p>The impact of Interest in Video Games has over the human brain shouldn't be underestimated.
+              Apart from serving as a recreational material, Video Games also tend to improve problem solving skills.
+          </p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carousell" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carousell" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+
+
+<footer class="page-footer bg-dark">
+    <div class="bg-success">
+        <div class="container">
+            <div class="row py-4 d-flex align-items-center">
+                <div class="col-md-12 text-center containeru">
+                    <a href="#"><i class="fab fa-facebook-f text-white mr-20" style="margin-right: 20px;" ></i></a>
+                    <a href="#"><i class="fab fa-twitter text-white mr-20" style="margin-right: 20px;"></i></a>
+                    <a href="#"><i class="fab fa-linkedin text-white mr-20" style="margin-right: 20px;" ></i></a>
+                    <a href="#"><i class="fab fa-github" ></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="container text-center text-md-left mt-5">
+<div class="row">
+<div class="col-md-3 mx-auto mb-4">
+    <h6 class="text-white text-uppercase font-weight-bold">About Us</h6>
+    <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 125px;" height="2px">
+    <p class="mt-2 text-white">We are a non-profit and non-governmental organization here solely for the purpose of helping young as well as adult ethiopian students through a means of providing help with answers to different types of questions raised by students. our other purpose here is to help students get informed about different kinds of opportunities that comes their way and make sure that they don't miss it.  </p>
+</div>
+<div class="col-md-2 mx-auto mb-4">
+    <h6 class="text-white text-uppercase font-weight-bold ">Contacts</h6>
+    <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 85px;" height="2px">
+    
+<ul class="list-unstyled text-white">
+    <li class="my-2"><i class="fa fa-home mr-3"></i>AddisAbaba, Ethiopia</li>
+    <li class="my-2"><i class="fa fa-envelope mr-3"></i>ESA@gmail.com</li>
+    <li class="my-2"><i class="fa fa-phone mr-3"></i>+251973004627</li>
+    <li class="my-2"><i class="fa fa-print mr-3"></i>+0114331452</li>
+</ul>
+
+
+</div>
+</div>
+</div>
+</footer>
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>   
+</body>
+</html>

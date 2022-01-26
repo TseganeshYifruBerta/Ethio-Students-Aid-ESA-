@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link th:href="@{/css/style2.css}" rel="stylesheet" />
+        <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"></html>
+        <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Welcome</title>
+        <script
+        th:src="@{/js/fa.js}"
+        data-auto-a11y="true"
+      ></script>
+      <link rel="stylesheet" th:href="@{/js/fa.css}">
+    </head>
+<body>
+
+    <!-- <div class="d-flex justify-content-center align-items-center myback"
+        style="background-image: url(/images/john.jpg);height:100vh;">
+        
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
+            <div class="d-flex justify-content-center align-items-center h-100">
+              <p class="myp text-white mb-0">Ethiopian Student Aid</p>
+            </div>
+            <div class="container">
+                <button class="btn btn-info"><span class="glyphicon glyphicon-user"></span>Login</button>
+         
+            </div>''
+          </div>
+
+    </div> -->
+
+    
+  <!-- <div id="home">
+    <div class="landing-text">
+        <h1>Welcome</h1>
+        <h3>Ethio Students Aid</h3>
+        <br>
+        <a href="#" class="btn btn-primary btn-lg">Get Started</a>
+    </div>
+</div> -->
+<section class="Home">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h1>Ethio Students Aid</h1>
+            <a th:href="@{/login}" class="btn btn-primary btn-lg" method= "POST" >Get Started</a> 
+        </div>
+    </div>
+</div>
+</section>
+
+    <footer class="page-footer bg-dark">
+        <div class="bg-success" >
+            <div class="container">
+                <div class="row py-4 d-flex align-items-center">
+                    <div class="col-md-12 text-center">
+                        <a href="#"><i class="fab fa-facebook-f text-white mr-4" ></i></a>
+                        <a href="#"><i class="fab fa-twitter text-white mr-4" ></i></a>
+                        <a href="#"><i class="fab fa-linkedin text-white mr-4" ></i></a>
+                        <a href="#"><i class="fab fa-github" ></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="container text-center text-md-left mt-5">
+    <div class="row">
+    <div class="col-md-3 mx-auto mb-4">
+        <h6 class="text-white text-uppercase font-weight-bold">About Us</h6>
+        <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 125px;" height="2px">
+    <p class="mt-2 text-white">We are a non-profit and non-governmental organization here solely for the purpose of helping young as well as adult ethiopian students through a means of providing help with answers to different types of questions raised by students. our other purpose here is to help students get informed about different kinds of opportunities that comes their way and make sure that they don't miss it.  </p>
+    </div>
+    <div class="col-md-2 mx-auto mb-4">
+        <h6 class="text-white text-uppercase font-weight-bold ">Contacts</h6>
+        <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 85px;" height="2px">
+        
+    <ul class="list-unstyled text-white">
+        <li class="my-2"><i class="fa fa-home mr-3"></i>AddisAbaba, Ethiopia</li>
+        <li class="my-2"><i class="fa fa-envelope mr-3"></i>ESA@gamil.com</li>
+        <li class="my-2"><i class="fa fa-phone mr-3"></i>+251973004627</li>
+        <li class="my-2"><i class="fa fa-print mr-3"></i>+0114331452</li>
+    </ul>
+    
+    
+    </div>
+    </div>
+    </div>
+    </footer>
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

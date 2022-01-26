@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* html, body{
+    height: 100%;
+    width: 100%;
+    font-family: sans-serif;
+    color:rgb(255, 255, 255);
+}
+#home{
+    background-image: url(/images/john.jpg);
+    background-repeat: no-repeat;
+    display: table;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+}
+.landing-text{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+} 
+h1{
+    font-family:'Montserrat',sans-serif;
+    font-size: 100px;
+    line-height: 1.2;
+
+} */
+header{
+    display: none;
+}
+.Home{
+    position: relative;
+    background-image: url(/images/john.jpg);
+    opacity: 80%;
+    min-height: 60vh;
+    background-size: cover;
+    background-position: center;
+    padding: 220px 0 200px;
+}
+.Home h1{
+    margin: 0;
+    padding: 0;
+    font-size: 3.2em;
+    color: rgb(69, 28, 112);
+    font-weight: bold;
+    text-transform: uppercase;
+    opacity: 100;
+    margin-bottom: 30px;
+}

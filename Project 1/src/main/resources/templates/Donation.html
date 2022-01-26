@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link th:href="@{/css/style.css}" rel="stylesheet" />
+        <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"></html>
+        <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Welcome</title>
+        <script
+        th:src="@{/js/fa.js}"
+        data-auto-a11y="true"
+      ></script>
+      <link rel="stylesheet" th:href="@{/js/fa.css}">
+    </head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light navigation" >
+            <img src="/images/ESA.png"   alt="Logo" width="20%" height="20%"  class="d-inline-block align-top navbar-brand" /><span class="hidden">EthioStudents Aid</span></a> 
+           
+        <button
+            class="navbar navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#toggleMobileMenu"
+            aria-controls="toggleMobileMenu"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            >
+        <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="toggleMobileMenu">
+            <ul class="navbar-nav ms-auto text-center">
+                <li>
+                    <a class="nav-link" th:href="@{/opportunities}">Opportunities</a>
+                </li>
+                <li>
+                    <a class="nav-link" th:href="@{/providehelp}">Provide Help</a>
+                </li>
+                <li>
+                    <a class="nav-link" th:href="@{/addForm}">Ask for help</a>
+                </li>
+                <li>
+                    <a class="nav-link" th:href="@{/donation}">Support us</a>
+                </li>
+                <li>
+                    <a class="nav-link" th:href="@{/Frontpage}">Home</a>
+                </li>
+            </ul>
+        </div>
+        </nav>
+    </div>
+    <div class="row p-0  justify-content-center align-items-center">
+            <div class="d-flex justify-content-center align-items-center myback"
+        style="background-image: url(/images/donate2.jpg);height:400px;">
+            <div class="d-flex justify-content-center align-items-center h-100">
+              <p class="text-white mb-0 myp">DONATE and SUPPORT OUR PROGRAM</p>
+            </div>
+                <!-- <button class="btn btn-info"><span class="glyphicon glyphicon-user"></span>Login</button> -->
+    </div>
+
+<div class="row justify-content-center align-items-center">
+    <div class="col border  rounded-3 p-3 mb-2 bg-success text-white text-dark h-auto d-inline-block"
+    style="--bs-gap:2; --bs-bg-opacity: .5;">
+          <a href=""><img src="/images/money.png" alt=""></a>
+          <h1>DONATE NOW</h1>
+          <span>please use this bank account <span>1234567890123</span></span>
+          <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam eum necessitatibus inventore maiores nisi corrupti error earum. Possimus, aut quisquam?</span>
+        </div>
+          <div class="col border  rounded-3 p-3 mb-2 bg-success text-white text-dark h-auto d-inline-block"
+          style="--bs-bg-opacity: .5;">
+          <a href=""><img src="/images/money1.png" alt=""></a>
+          <h1>DONATE monthly</h1>
+          <span>please use this bank account <span>09876543212345</span> and register</span>
+          <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo tempora ducimus vitae maxime consequuntur exercitationem, error aut esse perferendis sequi.</span>
+          </div>
+          <div class="col border  rounded-3 p-3 mb-2 bg-success text-white text-dark h-auto d-inline-block"
+          style="--bs-bg-opacity: .5;">
+          <a href=""><img src="/images/school.png" alt=""></a>
+            <h1>PROVIDE scholarship</h1>
+            <span>please contact as <span>abc@gmail.com</span></span>
+            <span> Lorem ipsum dolor sit amet. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam reiciendis eaque accusantium iste iusto esse unde ipsam in incidunt dolorum?</span>
+          </div>
+    </div>
+    </div>
+    <footer class="page-footer bg-dark">
+        <div class="bg-success">
+            <div class="container">
+                <div class="row py-4 d-flex align-items-center">
+                    <div class="col-md-12 text-center">
+                        <a href="#"><i class="fab fa-facebook-f text-white mr-4" ></i></a>
+                        <a href="#"><i class="fab fa-twitter text-white mr-4" ></i></a>
+                        <a href="#"><i class="fab fa-linkedin text-white mr-4" ></i></a>
+                        <a href="#"><i class="fab fa-github" ></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="container text-center text-md-left mt-5">
+    <div class="row">
+    <div class="col-md-3 mx-auto mb-4">
+        <h6 class="text-white text-uppercase font-weight-bold">About Us</h6>
+        <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 125px;" height="2px">
+        <p class="mt-2 text-white">We are a non-profit and non-governmental organization here solely for the purpose of helping young as well as adult ethiopian students through a means of providing help with answers to different types of questions raised by students. our other purpose here is to help students get informed about different kinds of opportunities that comes their way and make sure that they don't miss it.  </p>
+    </div>
+    <div class="col-md-2 mx-auto mb-4">
+        <h6 class="text-white text-uppercase font-weight-bold ">Contacts</h6>
+        <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 85px;" height="2px">
+        
+    <ul class="list-unstyled text-white">
+        <li class="my-2"><i class="fa fa-home mr-3"></i>AddisAbaba, Ethiopia</li>
+        <li class="my-2"><i class="fa fa-envelope mr-3"></i>ESA@gamil.com</li>
+        <li class="my-2"><i class="fa fa-phone mr-3"></i>+251973004627</li>
+        <li class="my-2"><i class="fa fa-print mr-3"></i>+0114331452</li>
+    </ul>
+    
+    
+    </div>
+    </div>
+    </div>
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

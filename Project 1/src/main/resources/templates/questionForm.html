@@ -1,0 +1,150 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <link th:href="@{/css/style.css}" rel="stylesheet" />
+        <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"></html>
+        <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Welcome</title>
+        <script
+        th:src="@{/js/fa.js}"
+        data-auto-a11y="true"
+      ></script>
+      <link rel="stylesheet" th:href="@{/js/fa.css}">
+    </head>
+    <body>
+        <div class="container">
+        <div class="container wweww">
+            <nav class="navbar navbar-expand-lg navbar-light navigation" >
+                <img src="/images/ESA.png"   alt="Logo" width="20%" height="20%"  class="d-inline-block align-top navbar-brand" /><span class="hidden">EthioStudents Aid</span></a> 
+               
+            <button
+                class="navbar navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#toggleMobileMenu"
+                aria-controls="toggleMobileMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                >
+            <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="toggleMobileMenu">
+                <ul class="navbar-nav ms-auto text-center">
+                    <li>
+                        <a class="nav-link" th:href="@{/opportunities}">Opportunities</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" th:href="@{/providehelp}">Provide Help</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" th:href="@{/addForm}">Ask for help</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" th:href="@{/donation}">Support us</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" th:href="@{/Frontpage}">Home</a>
+                    </li>
+                </ul>
+            </div>
+            </nav>
+        </div>
+        <h1>        <a th:href=" @{/answer(userId=${AskQ.id})}" class="btn btn-primary mb-20">View Answers</a>
+        </h1>
+        
+                    <h2>Add Questions</h2>
+                    <hr>
+                    
+                    <div class="card text-right" style="width: 18rem;">
+                        
+                        
+                    <form th:action="@{/saveQsn}" th:object="${AskQ}" method="POST">
+                        <label for="username">UserName</label>
+                        <!-- <p th:text="*{id}"></p> -->
+                       
+                        <!-- <p th:text="*{username}"></p> -->
+        
+                        <input type="text" th:field = "*{username}"  placeholder="username..." class="form-control">
+                         <!-- <p th:text="*{type}"></p> -->
+                        <!-- <input type="text" th:field = "*{type}"  placeholder="enter email"th:class="| form-control ${#fields.hasErrors('type')? 'is-invalid': 'is-valid'}|"> -->
+                        <label for="type">Qsn type</label>
+                        <!-- <p th:text="*{type}"></p> -->
+        
+                        <select name="Subject" th:field = "*{type}" id="subject" class="form-control">
+                            <option value="PHYSICS">PHYSICS</option>
+                            <option value="MATHS">MATHS</option>
+                            <option value="CHEMISTRY">CHEMISTRY</option>
+                            <option value="ENGLISH">ENGLISH</option>
+                            <option value="PROGRAMMING">PROGRAMMING</option>
+                            <option value="GEOGRAPHY">GEOGRAPHY</option>
+                            <option value="PSYCHOLOGY">PSYCHOLOGY</option>
+                            <option value="BIOLOGY">BIOLOGY</option>
+                            <option value="CIVICS">CIVICS</option>
+                            <option value="ART">ART</option>
+                            <option value="HISTORY">HISTORY</option>
+                        </select>
+        
+        
+                        <label for="question">Your Question</label>
+                        <!-- <p th:text="*{question}"></p> -->
+                        <!-- <p th:text="*{answer}"></p> -->
+        
+                        <input type="text" th:field = "*{question}" placeholder="write your question"   style="height:100px; margin:auto"/>
+                        <!-- <div class="invalid-feedback" th:if="${#fields.hasErrors('question')}" th:errors="*{question}"></div> -->
+        
+                        <div>
+                        <input type="text" th:field = "*{answer}" placeholder="write your answer"   style="height:100px; margin:auto"/>
+        
+        
+                        <button class="btn-primary rounded ml-5" type="submit">submit</button>
+        
+                        <input type="hidden" th:field="*{id}">
+                    </div>
+        
+                    </form>
+                </div>
+                    <hr>
+                    <a th:href = @{/} class="text-info">back to the list</a>
+            <footer class="page-footer bg-dark mt-5">
+                <div class="bg-success">
+                    <div class="container">
+                        <div class="row py-4 d-flex align-items-center">
+                            <div class="col-md-12 text-center">
+                                <a href="#"><i class="fab fa-facebook-f text-white mr-4" ></i></a>
+                                <a href="#"><i class="fab fa-twitter text-white mr-4" ></i></a>
+                                <a href="#"><i class="fab fa-linkedin text-white mr-4" ></i></a>
+                                <a href="#"><i class="fab fa-github" ></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="container text-center text-md-left mt-5">
+            <div class="row">
+            <div class="col-md-3 mx-auto mb-4">
+                <h6 class="text-white text-uppercase font-weight-bold">About Us</h6>
+                <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 125px;" height="2px">
+            <p class="mt-2 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est deserunt eligendi recusandae deleniti. Soluta temporibus aspernatur neque dolore. Expedita architecto non molestias dolores ut cupiditate quisquam dolore nisi voluptate quae.</p>
+            </div>
+            <div class="col-md-2 mx-auto mb-4">
+                <h6 class="text-white text-uppercase font-weight-bold ">Contacts</h6>
+                <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 85px;" height="2px">
+                
+            <ul class="list-unstyled text-white">
+                <li class="my-2"><i class="fa fa-home mr-3"></i>AddisAbaba, Ethiopia</li>
+                <li class="my-2"><i class="fa fa-envelope mr-3"></i>ESA@gamil.com</li>
+                <li class="my-2"><i class="fa fa-phone mr-3"></i>+251973004627</li>
+                <li class="my-2"><i class="fa fa-print mr-3"></i>+0114331452</li>
+            </ul>
+            
+            
+            </div>
+            </div>
+
+        </div>
+        <script th:src="@{/js/bootstrap.bundle.min.js}"></script>   
+
+    </body>
+
+</html>

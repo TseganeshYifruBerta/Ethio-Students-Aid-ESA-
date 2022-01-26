@@ -1,0 +1,50 @@
+/* body{
+overflow: hidden;
+} */
+.myback{
+    max-width: 100%; height: auto; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+   }
+   .myp{
+       font-size: 45px;
+       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   }
+   .hidden{
+       display: none;
+   }
+   .navigation a:hover{
+    /* background-color: rgb(223, 71, 129); */
+    margin-right: 20px;
+    border-bottom: 1px solid black;
+    color: rgba(248, 76, 119, 0.644);
+   }
+   .mybackground {
+    background-repeat: no-repeat;
+    background-image: cover;
+}
+.pad{
+    margin-top: 150px;
+}
+.corousel-item{
+    height: 32rem;
+    background: rgb(255, 255, 255);
+    /* position: relative; */
+}
+.container{
+    /* position: relative; */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 50px;
+    
+}
+.ugh{
+    color: black;
+    font-size: larger;
+    font-weight: bolder;
+}
+.fix{
+    margin-top: 30px;
+}
