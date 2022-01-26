@@ -8,8 +8,8 @@ import lombok.Data;
 public class RegistrationForm {
     private String username;
     private String password;
-    private String fullName;
-    private String phone;
+    private String firstName;
+    private String lastName;
 
     User toUser(PasswordEncoder encoder) {
         User user = new User();
