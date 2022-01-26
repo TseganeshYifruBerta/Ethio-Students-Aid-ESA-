@@ -57,24 +57,24 @@
                 <input type="text" th:field = "*{username}"  placeholder="username..." class="form-control"> -->
                 <!-- <input type="text" th:field = "*{type}"  placeholder="enter email"th:class="| form-control ${#fields.hasErrors('type')? 'is-invalid': 'is-valid'}|"> -->
                 <label for="type">Question type</label>
-                <select name="Subject" th:field = "*{type}" id="subject" class="form-control">
-                    <option value=""></option>
-                    <option value="PHYSICS">PHYSICS</option>
-                    <option value="MATHS">MATHS</option>
-                    <option value="CHEMISTRY">CHEMISTRY</option>
-                    <option value="ENGLISH">ENGLISH</option>
-                    <option value="PROGRAMMING">PROGRAMMING</option>
-                    <option value="GEOGRAPHY">GEOGRAPHY</option>
-                    <option value="PSYCHOLOGY">PSYCHOLOGY</option>
-                    <option value="BIOLOGY">BIOLOGY</option>
-                    <option value="CIVICS">CIVICS</option>
-                    <option value="ART">ART</option>
-                    <option value="HISTORY">HISTORY</option>
-                </select>
+               <select class="form-select form-control" name="Subject" th:field = "*{type}" id="subject"  style="width: 200px;">
+                            <!-- <option value=""></option> -->
+                            <option value="PHYSICS">PHYSICS</option>
+                            <option value="MATHS">MATHS</option>
+                            <option value="CHEMISTRY">CHEMISTRY</option>
+                            <option value="ENGLISH">ENGLISH</option>
+                            <option value="PROGRAMMING">PROGRAMMING</option>
+                            <option value="GEOGRAPHY">GEOGRAPHY</option>
+                            <option value="PSYCHOLOGY">PSYCHOLOGY</option>
+                            <option value="BIOLOGY">BIOLOGY</option>
+                            <option value="CIVICS">CIVICS</option>
+                            <option value="ART">ART</option>
+                            <option value="HISTORY">HISTORY</option>
+                        </select>
                 <div class="fix">
                 <label for="question">Your Question</label>
                 
-                <input type="text" th:field = "*{question}" placeholder="write your question"   style="margin:auto"/>
+                        <input type="text" th:field = "*{question}" placeholder="write your question"   style="height:100px; margin:auto"/>
                 <!-- <div class="invalid-feedback" th:if="${#fields.hasErrors('question')}" th:errors="*{question}"></div> -->
                 <input type="hidden" th:field = "*{answer}" placeholder="write your question"   style="margin:auto"/>
                 <button class="btn-primary rounded ml-5" type="submit">submit</button>
