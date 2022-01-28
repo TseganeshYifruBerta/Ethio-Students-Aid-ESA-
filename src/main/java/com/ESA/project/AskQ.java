@@ -1,25 +1,14 @@
 package com.ESA.project;
-// import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-// import javax.persistence.OneToMany;
 import javax.persistence.Table;
-// import javax.validation.constraints.NotBlank;
-// import javax.validation.constraints.NotNull;
-// import javax.validation.constraints.Size;
-
+ import javax.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
-
-// import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
-
-// import com.fasterxml.jackson.annotation.JsonBackReference;
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 @Data
-// @Type
 @Entity
 @Table(name = "questions")
 @AllArgsConstructor
@@ -28,13 +17,11 @@ public class AskQ {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    // @NotBlank(message="write your name please")
+    @NotBlank(message="write your name please")
     private String username;
-    // @NotBlank(message="please select the question type you want to ask")
+    @NotBlank(message="please write the question you want to ask")
     private String question;
     private Type type;
-    // @NotNull
-    // @Size(min = 5, message = "question must be at least 15 characters long")    private String question;
     private String answer;
 
 

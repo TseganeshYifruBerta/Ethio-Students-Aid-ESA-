@@ -1,5 +1,4 @@
-package com.ESA.project.security;
-
+package com.ESA.project;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -33,7 +32,8 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeRequests()
-                .antMatchers("/Frontpage","/donation","/AskQ","/opportunities","/provideAnswer","/searched","/searchquestions","/questionForm","/ViewAnswer").hasRole("USER")
+                .antMatchers("/Frontpage","/donation","/AskQ","/opportunities","/provideAnswer","/searched","/searchquestions","/questionForm","/ViewAnswer","/members","/profile").authenticated()
+                .antMatchers("/providehelp").hasRole(User.Role.ADMIN.name())
                 .antMatchers("/home").permitAll()
                 .and()
                 .formLogin()
@@ -41,6 +41,8 @@ public class SecurityConfig {
                 .defaultSuccessUrl("/Frontpage")
                 .and()
                 .logout()
+                .logoutUrl("/logout")  
+                .logoutSuccessUrl("/login")
                 .and()
                 .build();
     }

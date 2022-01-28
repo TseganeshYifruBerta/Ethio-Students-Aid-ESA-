@@ -56,70 +56,38 @@
                     <li>
                         <a class="btn btn-outline-success my-2 my-sm-0" th:href="@{/login}">LOGOUT</a>
                     </li>
-                    
                 </ul>
             </div>
             </nav>
         </div>
-        <h1>        <a th:href=" @{/answer(userId=${AskQ.id})}" class="btn btn-primary mb-20">View Answers</a>
         </h1>
-        
-                    <h2>Add Questions</h2>
-                    <hr>
-                    
-                    <div class="card text-right" style="width: 18rem;">
-                        
-                        
-                    <form th:action="@{/saveQsn}" th:object="${AskQ}" method="POST">
-                        
+       
+        <!-- <div class="p-3 mb-2 bg-info text-white">
+            THANKS!!!!
+            YOUR QUESTION IS SUSSESSFULLY SENT PLEASE WAIT A MOMENT TILL THE ADMINS PROVIDE YOU THE ANSWER.
+            <a th:href="@{/addForm}" class="btn btn-primary mb-20">click to ask more questions</a>
 
-                         <!-- <p th:text="*{type}"></p> -->
-                        <!-- <input type="text" th:field = "*{type}"  placeholder="enter email"th:class="| form-control ${#fields.hasErrors('type')? 'is-invalid': 'is-valid'}|"> -->
-                        <label for="type">Qsn type</label>
-                        <!-- <p th:text="*{type}"></p> -->
-        
-                       <select class="form-select form-control" name="Subject" th:field = "*{type}" id="subject"  style="width: 200px;">
-                            <!-- <option value=""></option> -->
-                            <option value="PHYSICS">PHYSICS</option>
-                            <option value="MATHS">MATHS</option>
-                            <option value="CHEMISTRY">CHEMISTRY</option>
-                            <option value="ENGLISH">ENGLISH</option>
-                            <option value="PROGRAMMING">PROGRAMMING</option>
-                            <option value="GEOGRAPHY">GEOGRAPHY</option>
-                            <option value="PSYCHOLOGY">PSYCHOLOGY</option>
-                            <option value="BIOLOGY">BIOLOGY</option>
-                            <option value="CIVICS">CIVICS</option>
-                            <option value="ART">ART</option>
-                            <option value="HISTORY">HISTORY</option>
-                        </select>
-                        <label for="username">UserName</label>
-                        <!-- <p th:text="*{id}"></p> -->
-                       
-                        <!-- <p th:text="*{username}"></p> -->
-                        <input type="text" th:field="*{username}" placeholder="username..." th:class="|form-control ${#fields.hasErrors( 'username')? 'is-invalid': 'is-valid'}| " required/>
-                        <div class="invalid-feedback" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
-        
-                        <label for="question">Your Question</label>
-                        <input type="text" th:field = "*{question}" placeholder="write your question"   style="height:150px; margin:auto"/>
-                        <!-- <div class="invalid-feedback" th:if="${#fields.hasErrors('question')}" th:errors="*{question}"></div> -->
-                        <div class="invalid-feedback" th:if="${#fields.hasErrors('question')}" th:errors="*{question}"></div>
+        </div>
+                     -->
 
-                        <div>
-                            <br>
-                            <br>
-                <input type="text" th:field = "*{answer}" placeholder="write your answer"    style="height:200px; width: 300px; margin:auto"/>
-        
-                <!-- <div class="invalid-feedback" th:if="${#fields.hasErrors('')}" th:errors="*{password}"></div> -->
-        
-                        <button class="btn-primary rounded ml-5" type="submit">submit</button>
-        
-                        <input type="hidden" th:field="*{id}">
-                    </div>
-        
-                    </form>
-                </div>
-                    <hr>
-                    <!-- <a th:href = @{/} class="text-info">back to the list</a> -->
+                     <div th:each="User: ${User} ">
+                        <div class="card border-secondary mb-3" style="max-width: 30rem;"></div>
+                         <!-- <td th:text = "${AskQ.username}"></td> -->
+                         <span>USERNAME:-</span>
+                        <span th:text = "${user.username}"></span><br>
+                        <span>USERNAME:-</span>
+                        <span th:text = "${User.id}"></span><br>
+                        <span>FIRSTNAME:-</span>
+                        <span th:text = "${User.firstName}"></span><br>
+                        <span>LASTNAME:-</span>
+                        
+                        <span th:text = "${User.lastName}"></span><br>
+                        <div class="card border-info mb-3 card-body text-info card-header" style="width: 18rem;">
+                        <span class="card-title">  ROLE:-</span><br>
+                        <span class="card-text" th:text = "${User.Role}"></span><br>
+
+                        </div>
+                   
             <footer class="page-footer bg-dark mt-5">
                 <div class="bg-success">
                     <div class="container">
@@ -138,7 +106,8 @@
             <div class="col-md-3 mx-auto mb-4">
                 <h6 class="text-white text-uppercase font-weight-bold">About Us</h6>
                 <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 125px;" height="2px">
-            <p class="mt-2 text-white">We are a non-profit and non-governmental organization here solely for the purpose of helping young as well as adult ethiopian students through a means of providing help with answers to different types of questions raised by students. our other purpose here is to help students get informed about different kinds of opportunities that comes their way and make sure that they don't miss it.  </p>
+            <p class="mt-2 text-white">Below Lies Three Of The Things We Strongly Advise Students Of This Time Should Get Involved With.
+                Our Belief Is That These Three Aspects, Tend To Improve The Human Mind Get The Better Of Themselves</p>
             </div>
             <div class="col-md-2 mx-auto mb-4">
                 <h6 class="text-white text-uppercase font-weight-bold ">Contacts</h6>

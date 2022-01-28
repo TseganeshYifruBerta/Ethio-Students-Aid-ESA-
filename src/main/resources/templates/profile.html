@@ -54,6 +54,7 @@
                     <li>
                         <a class="nav-link" th:href="@{/members}">Members</a>
                     </li>
+                    
                     <li>
                         <a class="btn btn-outline-success my-2 my-sm-0" th:href="@{/login}">LOGOUT</a>
                     </li>
@@ -62,38 +63,48 @@
             </nav>
         </div>
     
-       <div>
-        <h2>List of Question and Answers</h2>
+     
+        <!-- <h2>List of Question and Answers</h2>
         <hr>
         <a th:href="@{/addForm}" class="btn btn-primary mb-20">Add Question</a>
         <hr>
-        <a th:href="@{/searchquestion}" class="btn btn-primary mb-20">Search Questions</a>
+        <a th:href="@{/searchquestion}" class="btn btn-primary mb-20">Search Questions</a> -->
         <!-- <a th:href = @{/showUpdateForm(userId=${AskQ.id})} class="btn btn-info">Provide Answer</a> -->
-        <a th:href = @{/AskQ} class="btn btn-info">see more Questions and provide answers for the user</a>
+        <!-- <a th:href = @{/AskQ} class="btn btn-info">Provide Help</a>
 
-        <hr>
+        <hr> -->
 
-        
-        <div th:each="AskQ: ${AskQ} ">
-            <div class="card border-secondary mb-3 text-right" style="max-width: 30rem;"></div>
+        <!-- <a th:href = @{/members} class="btn btn-info">SHOW ALL MEMBERS</a> -->
+
+        <div th:each="User: ${User} ">
+            <div class="card" style="width: 18rem; background-color: lightblue;"></div>
+            <img class="img-account-profile" src="/images/pp.jpg" alt="">
+
+            <!-- <img class="card-img-top" src="/images/pp.png" alt="Card image cap"> -->
+            <div class="card-body">
              <!-- <td th:text = "${AskQ.username}"></td> -->
-             <span>User Name:-</span>
-            <span th:text = "${AskQ.username}"></span><br>
-            <span>Question Type:-</span>
-            <span th:text = "${AskQ.type}"></span><br>
-            <span>Question:-</span>
+             <span class="card-text">ID:-</span>
+             <span class="card-text" th:text = "${User.id}"></span><br>
+             <span class="card-text"> User Name:-</span>
+            <span class="card-text" th:text = "${User.username}"></span><br>
+            <span class="card-text">firstname:-</span>
+            <span class="card-text" th:text = "${User.firstName}"></span><br>
+            <span class="card-text">lastname:-</span>
             
-            <span th:text = "${AskQ.question}"></span><br>
-            <div class="card border-info mb-3 card-body text-info card-header" style="width: 18rem;">
-            <span class="card-title">  Answers:-</span><br>
+            <span class="card-text" th:text = "${User.lastName}"></span><br>
+            <span class="card-text">Role:-</span>
+            
+            <span class="card-text" th:text = "${User.role}"></span><br>
+            <!-- <div class="card border-info mb-3 card-body text-info card-header" style="width: 18rem;"> -->
+            <!-- <span class="card-title">  Ans:-</span><br>
             <span class="card-text" th:text = "${AskQ.answer}"></span><br>
+        </div> -->
+            <!-- <a th:href = @{/showUpdateForm(userId=${User.id})} class="btn btn-info">Provide Answer</a>
+            <a th:href = @{/deletequestion(userId=${AskQ.id})} class="btn btn-danger">Delete</a> -->
+        <!-- </div> -->
+            </div>
         </div>
-            <a th:href = @{/showUpdateForm(userId=${AskQ.id})} class="btn btn-info">Provide Answer</a>
-            <a th:href = @{/deletequestion(userId=${AskQ.id})} class="btn btn-danger">Delete</a>
-        </div>
-           
-           
-             <hr>
+      
         </div>
 
     <footer class="page-footer bg-dark">

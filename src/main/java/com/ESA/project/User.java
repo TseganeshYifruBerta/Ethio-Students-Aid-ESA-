@@ -1,14 +1,13 @@
-package com.ESA.project.security;
+package com.ESA.project;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.Size;
 
+import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,26 +18,50 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@Table(name="users")
 public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(unique = true)
-//     @NotNull
-//     @Size(min=6,message="Name must be ata least 5 characters long")
+    @Column(unique = true, nullable = false)
+    @Size(min = 6, message = "Name must be ata least 5 characters long")
     private String username;
-//       @Size(min = 5,max=10, message ="password must be between 4 and 10 characters long")
+
+    // @Column
     private String password;
-//        @Size(min = 4, message = "Name must be at least 4 characters long")
+
+    // @Column
+    @Size(min = 4, message = "Name must be at least 4 characters long")
     private String firstName;
-//       @Size(min = 4, message = "Name must be at least 4 characters long")
+
+    // @Column
+    @Size(min = 4, message = "Name must be at least 4 characters long")
     private String lastName;
+
+    @Column
+    @Enumerated(EnumType.STRING)
+    private Role role;
+    public static enum Role {
+        USER, ADMIN;
+
+        private Role() {
+
+        }
+    }
+
+    
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"));
+
+        List<SimpleGrantedAuthority> authorities = new ArrayList<>();
+        authorities.add(new SimpleGrantedAuthority("ROLE_" + getRole()));
+
+        return authorities;
     }
 
     @Override

@@ -33,10 +33,15 @@
         <div class="collapse navbar-collapse" id="toggleMobileMenu">
             <ul class="navbar-nav ms-auto text-center">
                 <li>
+                    <a class="nav-link" th:href="@{/Frontpage}">Home</a>
+                </li>
+                <li>
                     <a class="nav-link" th:href="@{/opportunities}">Opportunities</a>
                 </li>
                 <li>
                     <a class="nav-link" th:href="@{/providehelp}">Provide Help</a>
+                    <!-- <div class="invalid-feedback" th:if="${#objects.hasErrors('providehelp')}" th:errors="*{providehelp}"></div> -->
+
                 </li>
                 <li>
                     <a class="nav-link" th:href="@{/addForm}">Ask for help</a>
@@ -44,8 +49,18 @@
                 <li>
                     <a class="nav-link" th:href="@{/donation}">Support us</a>
                 </li>
+              
                 <li>
-                    <a class="nav-link" th:href="@{/Front}">Home</a>
+                    <a class="nav-link" th:href="@{/members}">Members</a>
+                </li>
+                <li>
+                    <a class="nav-link" th:href="@{/AboutUs}">About Us</a>
+                </li>
+                <!-- <li>
+                    <a class="nav-link" th:href="@{/showprofile(userId=${User.userId})}">members</a>
+                </li> -->
+                <li>
+                    <a class="btn btn-outline-success my-2 my-sm-0" th:href="@{/login}">LOGOUT</a>
                 </li>
             </ul>
         </div>

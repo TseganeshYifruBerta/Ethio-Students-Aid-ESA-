@@ -14,7 +14,7 @@
       <link rel="stylesheet" th:href="@{/js/fa.css}">
     </head>
     <body>
-        <div class="container">
+        
         <div class="container wweww">
             <nav class="navbar navbar-expand-lg navbar-light navigation" >
                 <img src="/images/ESA.png"   alt="Logo" width="20%" height="20%"  class="d-inline-block align-top navbar-brand" /><span class="hidden">EthioStudents Aid</span></a> 
@@ -56,70 +56,60 @@
                     <li>
                         <a class="btn btn-outline-success my-2 my-sm-0" th:href="@{/login}">LOGOUT</a>
                     </li>
-                    
                 </ul>
             </div>
             </nav>
         </div>
-        <h1>        <a th:href=" @{/answer(userId=${AskQ.id})}" class="btn btn-primary mb-20">View Answers</a>
         </h1>
-        
-                    <h2>Add Questions</h2>
-                    <hr>
-                    
-                    <div class="card text-right" style="width: 18rem;">
-                        
-                        
-                    <form th:action="@{/saveQsn}" th:object="${AskQ}" method="POST">
-                        
+       
+        <div class="p-3 mb-2 bg-info text-white">
+            THANKS!!!!
+            YOUR QUESTION IS SUSSESSFULLY SENT PLEASE WAIT A MOMENT TILL THE ADMINS PROVIDE YOU THE ANSWER.
+            <a th:href="@{/addForm}" class="btn btn-primary mb-20">click to ask more questions</a>
 
-                         <!-- <p th:text="*{type}"></p> -->
-                        <!-- <input type="text" th:field = "*{type}"  placeholder="enter email"th:class="| form-control ${#fields.hasErrors('type')? 'is-invalid': 'is-valid'}|"> -->
-                        <label for="type">Qsn type</label>
-                        <!-- <p th:text="*{type}"></p> -->
-        
-                       <select class="form-select form-control" name="Subject" th:field = "*{type}" id="subject"  style="width: 200px;">
-                            <!-- <option value=""></option> -->
-                            <option value="PHYSICS">PHYSICS</option>
-                            <option value="MATHS">MATHS</option>
-                            <option value="CHEMISTRY">CHEMISTRY</option>
-                            <option value="ENGLISH">ENGLISH</option>
-                            <option value="PROGRAMMING">PROGRAMMING</option>
-                            <option value="GEOGRAPHY">GEOGRAPHY</option>
-                            <option value="PSYCHOLOGY">PSYCHOLOGY</option>
-                            <option value="BIOLOGY">BIOLOGY</option>
-                            <option value="CIVICS">CIVICS</option>
-                            <option value="ART">ART</option>
-                            <option value="HISTORY">HISTORY</option>
-                        </select>
-                        <label for="username">UserName</label>
-                        <!-- <p th:text="*{id}"></p> -->
-                       
-                        <!-- <p th:text="*{username}"></p> -->
-                        <input type="text" th:field="*{username}" placeholder="username..." th:class="|form-control ${#fields.hasErrors( 'username')? 'is-invalid': 'is-valid'}| " required/>
-                        <div class="invalid-feedback" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
-        
-                        <label for="question">Your Question</label>
-                        <input type="text" th:field = "*{question}" placeholder="write your question"   style="height:150px; margin:auto"/>
-                        <!-- <div class="invalid-feedback" th:if="${#fields.hasErrors('question')}" th:errors="*{question}"></div> -->
-                        <div class="invalid-feedback" th:if="${#fields.hasErrors('question')}" th:errors="*{question}"></div>
+        </div>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  
+                  
+                  <h1>Know About Us</h1>
 
-                        <div>
-                            <br>
-                            <br>
-                <input type="text" th:field = "*{answer}" placeholder="write your answer"    style="height:200px; width: 300px; margin:auto"/>
-        
-                <!-- <div class="invalid-feedback" th:if="${#fields.hasErrors('')}" th:errors="*{password}"></div> -->
-        
-                        <button class="btn-primary rounded ml-5" type="submit">submit</button>
-        
-                        <input type="hidden" th:field="*{id}">
-                    </div>
-        
-                    </form>
-                </div>
-                    <hr>
-                    <!-- <a th:href = @{/} class="text-info">back to the list</a> -->
+        <div class="row">
+            <div class="card" style="width: 40rem;background-color:lightslategray;">
+            <div class="col-6 col-sm-4"> Who we are
+                Empowering the world to develop technology through collective knowledge.
+                Our public platform serves 100 million people every month, making it one of the 50 most popular websites in the world.
+                
+                Our asynchronous knowledge management and collaboration offering Stack Overflow for Teams, is transforming how people work.</div>
+            </div>
+            
+            <div class="card" style="width: 40rem;background-color:lightcyan">
+                <div class="col-6 col-sm-4">Adopt a customer-first mindset
+                Authentically serve our customers by empowering, listening and collaborating with our fellow</div>
+            </div>
+            <!-- Force next columns to break to new line at md breakpoint and up -->
+            <div class="w-100 d-none d-md-block"></div>
+            <br>
+            <br>
+            <br>
+            <div class="card" style="width: 40rem;background-color: lightcyan;">
+
+            <div class="col-6 col-sm-4">Be flexible and inclusive
+                We do our best work when a diverse group of people collaborate in an environment of respect and trust. Create space for different voices to be heard, and allow flexibility in how people work</div>
+            </div>
+            <div class="card" style="width: 40rem;background-color: lightslategray;">
+
+                <div class="col-6 col-sm-4">Be transparent
+                Communicate openly and honestly, both inside and outside the company. Encourage transparency from others by being empathetic, reliable, and acting with integrity.</div>
+          </div>
+        </div>
+                   
             <footer class="page-footer bg-dark mt-5">
                 <div class="bg-success">
                     <div class="container">

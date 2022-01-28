@@ -1,124 +1,150 @@
-<html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <link th:href="@{/css/style.css}" rel="stylesheet" />
-        <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"></html>
-        <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Welcome</title>
-        <script
-        th:src="@{/js/fa.js}"
-        data-auto-a11y="true"
-      ></script>
-      <link rel="stylesheet" th:href="@{/js/fa.css}">
-    </head>
-    <body>
-            <div class="container wweww">
-                <nav class="navbar navbar-expand-lg navbar-light navigation" >
-                    <img src="/images/ESA.png"   alt="Logo" width="20%" height="20%"  class="d-inline-block align-top navbar-brand" /><span class="hidden">EthioStudents Aid</span></a> 
-                   
-                <button
-                    class="navbar navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#toggleMobileMenu"
-                    aria-controls="toggleMobileMenu"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                    >
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <script th:src="@{/js/fa.js}" data-auto-a11y="true"></script>
+    <link rel="stylesheet" th:href="@{/js/fa.css}">
+</head>
+
+<body>
+    <div class="container wweww">
+        <nav class="navbar navbar-expand-lg navbar-light navigation">
+            <img src="/images/ESA.png" alt="Logo" width="20%" height="20%" class="d-inline-block align-top navbar-brand" /><span class="hidden">EthioStudents Aid</span></a>
+
+            <button class="navbar navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toggleMobileMenu" aria-controls="toggleMobileMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                     </button>
-                <div class="collapse navbar-collapse" id="toggleMobileMenu">
-                    <ul class="navbar-nav ms-auto text-center">
-                        <li>
-                            <a class="nav-link" th:href="@{/opportunities}">Opportunities</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" th:href="@{/providehelp}">Provide Help</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" th:href="@{/addForm}">Ask for help</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" th:href="@{/donation}">Support us</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" th:href="@{/Frontpage}">Home</a>
-                        </li>
-                    </ul>
-                </div>
-                </nav>
+            <div class="collapse navbar-collapse" id="toggleMobileMenu">
+                <ul class="navbar-nav ms-auto text-center">
+                    <li>
+                        <a class="nav-link" th:href="@{/Frontpage}">Home</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" th:href="@{/opportunities}">Opportunities</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" th:href="@{/providehelp}">Provide Help</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" th:href="@{/addForm}">Ask for help</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" th:href="@{/donation}">Support us</a>
+                    </li>
+                                      <li>
+                        <a class="nav-link" th:href="@{/members}">Members</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" th:href="@{/AboutUs}">About Us</a>
+                    </li>
+                    <li>
+                        <a class="btn btn-outline-success my-2 my-sm-0" th:href="@{/login}">LOGOUT</a>
+                        <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+                    </li>
+                    
+
+                </ul>
             </div>
+        </nav>
+    </div>
     
-            <h2>Add Questions</h2><hr>
-            <form th:action="@{/saveQsn}" th:object="${AskQ}" method="POST">
-                <!-- <label for="username">UserName</label>
-                <input type="text" th:field = "*{username}"  placeholder="username..." class="form-control"> -->
-                <!-- <input type="text" th:field = "*{type}"  placeholder="enter email"th:class="| form-control ${#fields.hasErrors('type')? 'is-invalid': 'is-valid'}|"> -->
-                <label for="type">Question type</label>
-               <select class="form-select form-control" name="Subject" th:field = "*{type}" id="subject"  style="width: 200px;">
-                            <!-- <option value=""></option> -->
-                            <option value="PHYSICS">PHYSICS</option>
-                            <option value="MATHS">MATHS</option>
-                            <option value="CHEMISTRY">CHEMISTRY</option>
-                            <option value="ENGLISH">ENGLISH</option>
-                            <option value="PROGRAMMING">PROGRAMMING</option>
-                            <option value="GEOGRAPHY">GEOGRAPHY</option>
-                            <option value="PSYCHOLOGY">PSYCHOLOGY</option>
-                            <option value="BIOLOGY">BIOLOGY</option>
-                            <option value="CIVICS">CIVICS</option>
-                            <option value="ART">ART</option>
-                            <option value="HISTORY">HISTORY</option>
-                        </select>
-                <div class="fix">
-                <label for="question">Your Question</label>
-                
-                        <input type="text" th:field = "*{question}" placeholder="write your question"   style="height:100px; margin:auto"/>
-                <!-- <div class="invalid-feedback" th:if="${#fields.hasErrors('question')}" th:errors="*{question}"></div> -->
-                <input type="hidden" th:field = "*{answer}" placeholder="write your question"   style="margin:auto"/>
-                <button class="btn-primary rounded ml-5" type="submit">submit</button>
-            </div>
-                <input type="hidden" th:field="*{id}">
-            </form>
+    <h2>Add Questions</h2>
+    <a th:href = @{/view} class="btn btn-info">view some questions with their Answers</a>
+
+    <hr>
+    <form th:action="@{/saveQsn}" th:object="${AskQ}" method="POST">
+        <div><a th:href="@{/addForm}" class="btn btn-primary mb-20">Add Question</a>
             <hr>
-            <!-- <a th:href = @{/} class="text-info">back to the list</a> -->
-            <footer class="page-footer bg-dark">
-                <div class="bg-success">
-                    <div class="container">
-                        <div class="row py-4 d-flex align-items-center">
-                            <div class="col-md-12 text-center containeru">
-                                <a href="#"><i class="fab fa-facebook-f text-white mr-20" style="margin-right: 20px;" ></i></a>
-                                <a href="#"><i class="fab fa-twitter text-white mr-20" style="margin-right: 20px;"></i></a>
-                                <a href="#"><i class="fab fa-linkedin text-white mr-20" style="margin-right: 20px;" ></i></a>
-                                <a href="#"><i class="fab fa-github" ></i></a>
-                            </div>
-                        </div>
+            <a th:href="@{/searchquestion}" class="btn btn-primary mb-20">Search Questions</a>
+    
+            <hr>
+            </div>
+        <label for="username">user name</label>
+        <input type="text" th:field="*{username}" placeholder="username..." th:class="|form-control ${#fields.hasErrors( 'username')? 'is-invalid': 'is-valid'}| " required/>
+        <div class="invalid-feedback" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
+<br>
+        <label for="type">Question type</label>
+        <select title="question" class=" form-select form-control " name="Subject " th:field="*{type} " id="subject " style="width: 200px; ">
+                             <!-- <option value=""></option> -->
+                            <option value="PHYSICS ">PHYSICS</option>
+                            <option value="MATHS ">MATHS</option>
+                            <option value="CHEMISTRY ">CHEMISTRY</option>
+                            <option value="ENGLISH ">ENGLISH</option>
+                            <option value="PROGRAMMING ">PROGRAMMING</option>
+                            <option value="GEOGRAPHY ">GEOGRAPHY</option>
+                            <option value="PSYCHOLOGY ">PSYCHOLOGY</option>
+                            <option value="BIOLOGY ">BIOLOGY</option>
+                            <option value="CIVICS ">CIVICS</option>
+                            <option value="ART ">ART</option>
+                            <option value="HISTORY ">HISTORY</option>
+                        </select>
+        <div class="fix ">
+            <label for="question ">Your Question</label>
+
+            <input type="text" th:field="*{question}" placeholder="write your question " style="height:175px; margin:auto " th:class="|form-control ${#fields.hasErrors( 'question')? 'is-invalid': 'is-valid'}| " required/>
+            <div class="invalid-feedback " th:if="${#fields.hasErrors('question')} " th:errors="*{question}"></div>
+            <input type="hidden" th:field="*{answer} " placeholder="write your question " style="margin:auto; height: 100px;" />
+            <button class="btn-primary rounded ml-5 " type="submit">submit</button>
+            <input type="hidden" th:field="*{id}">
+
+        </div>
+    </form>
+    <hr>
+
+
+        <hr>
+<h5>Often in exams and in assignments, you are required to give a shorter response, or write a single paragraph in response to a question or topic. Shorter and single paragraph responses are a little different from longer responses because they must be more focused and concise.
+
+</h5>
+<p>Typically, a shorter response will be one to two paragraphs and often your assignment or exam will give you a specific word limit. A key difference between an essay and a shorter response is length; this means you must be very concise and focused. Although there is no set rule about paragraph and shorter answer length, usually paragraphs are between 4 to 8 sentences, or 90 to 200 words, long.
+
+    Usually in an essay, you will give a little background information and define key words and concepts before you give your thesis statement and begin your discussion. With a shorter or single paragraph response, however, this is usually unnecessary (unless, of course, you have been asked for definitions). Instead, you can simply get straight to the point and do what you have been asked to do.</p>
+        
+       
+
+    <footer class="page-footer bg-dark ">
+        <div class="bg-success ">
+            <div class="container ">
+                <div class="row py-4 d-flex align-items-center ">
+                    <div class="col-md-12 text-center containeru ">
+                        <a href="# "><i class="fab fa-facebook-f text-white mr-20 " style="margin-right: 20px; " ></i></a>
+                        <a href="# "><i class="fab fa-twitter text-white mr-20 " style="margin-right: 20px; "></i></a>
+                        <a href="# "><i class="fab fa-linkedin text-white mr-20 " style="margin-right: 20px; " ></i></a>
+                        <a href="# "><i class="fab fa-github " ></i></a>
                     </div>
                 </div>
-            <div class="container text-center text-md-left mt-5">
-            <div class="row">
-            <div class="col-md-3 mx-auto mb-4">
-                <h6 class="text-white text-uppercase font-weight-bold">About Us</h6>
-                <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 125px;" height="2px">
-                <p class="mt-2 text-white">We are a non-profit and non-governmental organization here solely for the purpose of helping young as well as adult ethiopian students through a means of providing help with answers to different types of questions raised by students. our other purpose here is to help students get informed about different kinds of opportunities that comes their way and make sure that they don't miss it.  </p>
             </div>
-            <div class="col-md-2 mx-auto mb-4">
-                <h6 class="text-white text-uppercase font-weight-bold ">Contacts</h6>
-                <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 85px;" height="2px">
-                
-            <ul class="list-unstyled text-white">
-                <li class="my-2"><i class="fa fa-home mr-3"></i>AddisAbaba, Ethiopia</li>
-                <li class="my-2"><i class="fa fa-envelope mr-3"></i>ESA@gmail.com</li>
-                <li class="my-2"><i class="fa fa-phone mr-3"></i>+251973004627</li>
-                <li class="my-2"><i class="fa fa-print mr-3"></i>+0114331452</li>
-            </ul>
-            
-            
+        </div>
+        <div class="container text-center text-md-left mt-5 ">
+            <div class="row ">
+                <div class="col-md-3 mx-auto mb-4 ">
+                    <h6 class="text-white text-uppercase font-weight-bold ">About Us</h6>
+                    <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto " style="width: 125px; " height="2px ">
+                    <p class="mt-2 text-white ">We are a non-profit and non-governmental organization here solely for the purpose of helping young as well as adult ethiopian students through a means of providing help with answers to different types of questions raised by students.
+                        our other purpose here is to help students get informed about different kinds of opportunities that comes their way and make sure that they don't miss it. </p>
+                </div>
+                <div class="col-md-2 mx-auto mb-4 ">
+                    <h6 class="text-white text-uppercase font-weight-bold ">Contacts</h6>
+                    <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto " style="width: 85px; " height="2px ">
+
+                    <ul class="list-unstyled text-white ">
+                        <li class="my-2 "><i class="fa fa-home mr-3 "></i>AddisAbaba, Ethiopia</li>
+                        <li class="my-2 "><i class="fa fa-envelope mr-3 "></i>ESA@gmail.com</li>
+                        <li class="my-2 "><i class="fa fa-phone mr-3 "></i>+251973004627</li>
+                        <li class="my-2 "><i class="fa fa-print mr-3 "></i>+0114331452</li>
+                    </ul>
+
+
+                </div>
             </div>
-            </div>
-            </div>
-            </footer>
-        <script th:src="@{/js/bootstrap.bundle.min.js}"></script>   
-    </body>
+        </div>
+    </footer>
+    <script th:src="@{/js/bootstrap.bundle.min.js} "></script>
+</body>
+
 </html>

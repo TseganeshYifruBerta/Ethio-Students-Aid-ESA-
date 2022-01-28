@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -18,23 +17,31 @@
         <div class="container mx-auto w-50">
 
             <h1>Register</h1>
-            <form method="POST" th:action="@{/register}" id="registerForm">
+            <form method="POST" th:action="@{/register}" th:object="${user}" id="registerForm">
 
 
                 <label class="form-label" for="firstName">First name: </label>
-                <input class="form-control" type="text" name="firstName" id="firstName"/>
-                <!--<span class="validationError" th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}">firstname not correct</span> -->
-                
+                <input class="form-control" type="text" name="firstName" id="firstName" th:class="|form-control ${#fields.hasErrors('firstName')? 'is-invalid': 'is-valid'}|" required/>
+                <div class="invalid-feedback" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></div>
+
+
+
                 <label class="form-label" for="lastName">Last Name: </label>
-                <input class="form-control" type="text" name="lastName" id="lastName"/>
+                <input class="form-control" type="text" name="lastName" id="lastName" th:class="|form-control ${#fields.hasErrors('lastName')? 'is-invalid': 'is-valid'}|" required/>
+                <div class="invalid-feedback" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></div>
                 <!--<span class="validationError" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">lastName not correct</span> -->
 
                 <label class="form-label" for="username">Username: </label>
-                <input class="form-control" type="email" name="username" id="username"/>
+                <input class="form-control" type="email" name="username" id="username" th:class="|form-control ${#fields.hasErrors('username')? 'is-invalid': 'is-valid'}|" required/>
+                <div th:if="${message} != 'null'" th:text="${message}"></div>
+                <div class="invalid-feedback" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
+
+
                 <!--<span class="validationError" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">username not correct</span> -->
 
                 <label class="form-label" for="password">Password: </label>
-                <input class="form-control" type="password" name="password" id="password"/>
+                <input class="form-control" type="password" name="password" id="password" th:class="|form-control ${#fields.hasErrors('password')? 'is-invalid': 'is-valid'}|" required maxlength="10" minlength="5" />
+                <div class="invalid-feedback" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
                 <!--<span class="validationError" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">password not correct</span> -->
 
 

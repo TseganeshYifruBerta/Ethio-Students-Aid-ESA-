@@ -1,9 +1,6 @@
-package com.ESA.project.security;
-
+package com.ESA.project;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
 import lombok.Data;
-
 @Data
 public class RegistrationForm {
     private String username;
@@ -17,6 +14,7 @@ public class RegistrationForm {
         user.setPassword(encoder.encode(this.password));
         user.setFirstName(this.firstName);
         user.setLastName(this.lastName);
+        user.setRole(User.Role.USER);
         return user;
     }
 }

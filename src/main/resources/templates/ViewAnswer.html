@@ -15,8 +15,6 @@
       <link rel="stylesheet" th:href="@{/js/fa.css}">
     </head>
 <body>
-
-    <div class="container">
         <div class="container wweww">
             <nav class="navbar navbar-expand-lg navbar-light navigation" >
                 <img src="/images/ESA.png"   alt="Logo" width="20%" height="20%"  class="d-inline-block align-top navbar-brand" /><span class="hidden">EthioStudents Aid</span></a> 
@@ -35,6 +33,9 @@
             <div class="collapse navbar-collapse" id="toggleMobileMenu">
                 <ul class="navbar-nav ms-auto text-center">
                     <li>
+                        <a class="nav-link" th:href="@{/Frontpage}">Home</a>
+                    </li>
+                    <li>
                         <a class="nav-link" th:href="@{/opportunities}">Opportunities</a>
                     </li>
                     <li>
@@ -47,7 +48,13 @@
                         <a class="nav-link" th:href="@{/donation}">Support us</a>
                     </li>
                     <li>
-                        <a class="nav-link" th:href="@{/Frontpage}">Home</a>
+                        <a class="nav-link" th:href="@{/AboutUs}">About Us</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" th:href="@{/members}">Members</a>
+                    </li>
+                    <li>
+                        <a class="btn btn-outline-success my-2 my-sm-0" th:href="@{/login}">LOGOUT</a>
                     </li>
                 </ul>
             </div>
@@ -56,46 +63,23 @@
     
         <h2>List of Question and Answers</h2>
         <hr>
-        <a th:href="@{/addForm}" class="btn btn-primary mb-20">Add Question</a>
-        <hr>
 
-        <hr>
-    <table class="table table-bordered table-striped " id="customer-table">
-        <thead class="thead-dark">
-            <tr>
-                <!-- <th>Name</th> -->
-                <th>question type</th>
-                <th>question</th>
-                <th>answer</th>
-                <!-- <th>answerrrrr</th> -->
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="AskQ: ${AskQ} " >
-                <!-- <td th:text = "${AskQ.username}"></td> -->
-                <td th:text = "${AskQ.type}"th:field={*""}></td>
-                <td th:text = "${AskQ.question}"></td>
-                <!-- <td> 
-                    <a type="hidden" th:href = @{/showUpdateForm(userId=${AskQ.id})} class="btn btn-info">Provide Answer</a>
-                    <a th:href = @{/deletequestion(userId=${AskQ.id})} class="btn btn-danger">Delete</a>
-                </td> -->
-                <td th:text = "${AskQ.answer}"></td>
-
-                
-                <!-- <td>
-                   
-                           
-                                    
-                                    <input type="text" th:field="${answer}" placeholder="write your question"   style="height:100px; margin:auto"/>
-                                    <button class="btn-primary rounded ml-5" type="submit">submit</button>
-                        
-
-
-                </td> -->
-            </tr>
-        </tbody>
-    </table>
-    <p th></p>
+        <div th:each="AskQ: ${AskQ} ">
+            <div class="card border-secondary mb-3 text-right" style="max-width: 30rem;"></div>
+             <!-- <td th:text = "${AskQ.username}"></td> -->
+             <span>User Name:-</span>
+            <span th:text = "${AskQ.username}"></span><br>
+            <span>Question Type:-</span>
+            <span th:text = "${AskQ.type}"></span><br>
+            <span>Question:-</span>
+            
+            <span th:text = "${AskQ.question}"></span><br>
+            <div class="card border-info mb-3 card-body text-info card-header" style="width: 18rem;">
+            <span class="card-title">  Answers:-</span><br>
+            <span class="card-text" th:text = "${AskQ.answer}"></span><br>
+        
+    </div>
+        </div>
     <footer class="page-footer bg-dark mt-5">
         <div class="bg-success">
             <div class="container">
@@ -114,7 +98,7 @@
     <div class="col-md-3 mx-auto mb-4">
         <h6 class="text-white text-uppercase font-weight-bold">About Us</h6>
         <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width: 125px;" height="2px">
-    <p class="mt-2 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est deserunt eligendi recusandae deleniti. Soluta temporibus aspernatur neque dolore. Expedita architecto non molestias dolores ut cupiditate quisquam dolore nisi voluptate quae.</p>
+    <p class="mt-2 text-white">We are a non-profit and non-governmental organization here solely for the purpose of helping young as well as adult ethiopian students through a means of providing help with answers to different types of questions raised by students. our other purpose here is to help students get informed about different kinds of opportunities that comes their way and make sure that they don't miss it.  </p>
     </div>
     <div class="col-md-2 mx-auto mb-4">
         <h6 class="text-white text-uppercase font-weight-bold ">Contacts</h6>
