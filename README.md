@@ -1,4 +1,6 @@
-# Ethio-Students-Aid-ESA-
+
+#THIS READ ME FILE WAS CREATED 28 DAYS AGO. IT WAS DELETED ACCIDENTALLY FROM OUR REPOSITORY HENCE WE COMMITED IT AGAIN BY ACCESSING IT BACK FROM THE COMMIT HISTORY, WHICH IS AVAILABLE FOR VIEW!
+
 
 Ethio Students Aid (ESA.com)
 Members
@@ -7,6 +9,7 @@ Members
 3.	Tseganesh Yifru-----------UGR/3970/12
 4.	Ekram Kedir----------------UGR/9671/12
 5.	Ayalkbet Zelalem ---------ATR/2480/09 -----(Add)
+
 What we intend to do is to create a platform or a site where students from high school, middle school or college have free access to educational information about different kinds of opportunities they can get from this world and help them by providing different slides by different brilliant teachers from all around the world, as well as inspirational and guidance novels and videos (with subtitles) and also an audio version for all of these for people with different physical impairments. These are also followed by some features that will significantly benefit the students.
 Some of the features that will be include are:
 1. A very immersive home page for sharing information.
