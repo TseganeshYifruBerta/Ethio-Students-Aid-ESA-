@@ -27,10 +27,10 @@ public class User implements UserDetails {
     private Long id;
 
     @Column(unique = true, nullable = false)
-    @Size(min = 6, message = "Name must be ata least 5 characters long")
     private String username;
 
     // @Column
+    @Size(min = 5, message = "password must be at least 5 characters long")
     private String password;
 
     // @Column
